@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Enobio SiteMap</title>
+<!-- 引入 layui.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.9.8/css/layui.min.css" integrity="sha512-iXwIoZrWFn0FwCfnWPe8khdppLH1+hwE7bZYkmjAJaF4Lz/BhdKbd2lgQONvSkCJiezdhLsCgFM2znkDN1uyJw==" crossorigin="anonymous" referrerpolicy="no-referrer" /><!-- 引入 layui.js -->
+</head>
+<body>
+
+<div class="layui-container">
+  <div class="layui-progress" style="margin: 15px 0 30px;">
+    <div class="layui-progress-bar" lay-percent="100%"></div>
+  </div>
+  
+  <blockquote class="layui-elem-quote" style="margin-top: 30px;">
+    <div class="layui-text">
+      <ul>
+        <li>您当前预览的是：</li>
+        <li>Enobiology 网站地图</li>
+      </ul>
+    </div>
+  </blockquote>
+
+  <div class="gra" style="display: grid; grid-template-rows: 1fr; grid-template-columns: repeat(3, 1fr);">
+    <div class="nav1-tree" style="margin: 30px 0px;"></div>
+    <div class="nav2-tree" style="margin: 30px 0px;"></div>
+    <div class="nav3-tree" style="margin: 30px 0px;"></div>
+  </div>
+</div>
+
+
+
+<!-- body 末尾处引入 layui -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.9.8/layui.js" integrity="sha512-wr2CJEbfG2lCok8dbfh12ZK76eVe0/4XRacTqUi+G1b77x+SpbVyMGn6nf0mWyvEuOAp2TfpMuq6U8fob09xgA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+layui.use(function(){
+  var layer = layui.layer;
+  var tree = layui.tree;
+  var data = [
+    {
+        "title": "Home",
+        "id": 1
+    },
+    {
+        "title": "Services Overview",
+        "id": 2,
+        "children": [
+            {
+                "title": "Sequence Design Overview",
+                "id": 201,
+                "children": [
+                    {
+                        "title": "Protein Sequence Design",
+                        "id": 20101
+                    },
+                    {
+                        "title": "mRNA Sequence Design",
+                        "id": 20102,
+                        "children": [
+                            {
+                                "title": "Cap",
+                                "id": 2010201
+                            },
+                            {
+                                "title": "UTR5",
+                                "id": 2010202
+                            },
+                            {
+                                "title": "CDS",
+                                "id": 2010203
+                            },
+                            {
+                                "title": "UTR3",
+                                "id": 2010204
+                            },
+                            {
+                                "title": "PolyA",
+                                "id": 2010205
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "mRNA Synthesis",
+                "id": 202,
+                "children": [
+                    {
+                        "title": "mRNA Synthesis QC",
+                        "id": 20201
+                    },
+                    {
+                        "title": "mRNA Synthesis Evaluation",
+                        "id": 20202,
+                        "children": [
+                            {
+                                "title": "WB Section",
+                                "id": 2020201
+                            },
+                            {
+                                "title": "ELISA Section",
+                                "id": 2020202
+                            }
+                        ]
+                    },
+                    {
+                        "title": "mRNA Synthesis CMC",
+                        "id": 20203
+                    }
+                ]
+            },
+            {
+                "title": "mRNA-LNP Encapsulate Overview",
+                "id": 203,
+                "children": [
+                    {
+                        "title": "mRNA-LNP Encapsulate QC",
+                        "id": 20301
+                    },
+                    {
+                        "title": "mRNA-LNP Encapsulate Evaluation",
+                        "id": 20302,
+                        "children": [
+                            {
+                                "title": "ELISA Section",
+                                "id": 2030201
+                            },
+                            {
+                                "title": "EliSpot Section",
+                                "id": 2030202
+                            },
+                            {
+                                "title": "ICS Section",
+                                "id": 2030203
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Solutions Overview",
+        "id": 3,
+        "children": [
+            {
+                "title": "Pipeline Solution Overview",
+                "id": 301,
+                "children": [
+                    {
+                        "title": "VZV Pipeline",
+                        "id": 30101
+                    },
+                    {
+                        "title": "RSV Pipeline",
+                        "id": 30102
+                    },
+                    {
+                        "title": "OA Pipeline",
+                        "id": 30103
+                    },
+                    {
+                        "title": "NeoAntigen Pipeline",
+                        "id": 30104
+                    }
+                ]
+            },
+            {
+                "title": "Technique Solution Overview",
+                "id": 302,
+                "children": [
+                    {
+                        "title": "Protein Design and Large Scale Screening Solution",
+                        "id": 30201
+                    },
+                    {
+                        "title": "Immune Stimulating Solution",
+                        "id": 30202
+                    },
+                    {
+                        "title": "Liver Delivery of Long-acting Expression Solution",
+                        "id": 30203
+                    },
+                    {
+                        "title": "PolyA High Fidelity Solution",
+                        "id": 30204
+                    },
+                    {
+                        "title": "mRNA-LNP Lyophilized Preparation Solution",
+                        "id": 30205
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Products Overview",
+        "id": 4,
+        "children": [
+            {
+                "title": "mRNA Spot Products",
+                "id": 401
+            },
+            {
+                "title": "mRNA Synthesis Products",
+                "id": 402,
+                "children": [
+                    {
+                        "title": "Kit Section",
+                        "id": 40201
+                    },
+                    {
+                        "title": "Raw Materials Sections",
+                        "id": 40202,
+                        "children": [
+                            {
+                                "title": "Cap Section",
+                                "id": 4020201
+                            },
+                            {
+                                "title": "Nucleoside Section",
+                                "id": 4020202
+                            },
+                            {
+                                "title": "Enzyme Section",
+                                "id": 4020203
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "LNP Products",
+                "id": 403,
+                "children": [
+                    {
+                        "title": "Cationic Lipid Section",
+                        "id": 40301
+                    },
+                    {
+                        "title": "Equipment Section",
+                        "id": 40302
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Applications Overview",
+        "id": 5,
+        "children": [
+            {
+                "title": "18 Sections by Accordion",
+                "id": 501
+            }
+        ]
+    },
+    {
+        "title": "About",
+        "id": 6,
+        "children": [
+            {
+                "title": "SiteMapge",
+                "id": 601
+            },
+            {
+                "title": "Company Overview",
+                "id": 602
+            },
+            {
+                "title": "News",
+                "id": 603
+            },
+            {
+                "title": "Contact Us",
+                "id": 604
+            }
+        ]
+    }
+]
+    
+
+  // tree.render({
+  //   elem: '.nav1-tree',
+  //   data: data,
+  //   showLine: false
+  // });
+
+  // tree.render({
+  //   elem: '.nav2-tree',
+  //   data: data
+  // });
+
+  tree.render({
+    elem: '.nav1-tree',
+    data: data,
+    showCheckbox: true,
+    onlyIconControl: true,
+    id: "eno-demo-1",
+    // click: function(obj){
+    //   var data = obj.data;  //获取当前点击的节点数据
+    //   layer.msg('状态：'+ obj.state + '<br>Childrens：' + JSON.stringify(data.title));
+    // },
+  });
+});
+</script>
+</body>
+</html>
